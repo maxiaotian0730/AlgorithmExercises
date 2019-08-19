@@ -3,7 +3,7 @@ author:mxt
 desc:无算法应用，纯属Python暴力破解
 time：2019/08/16
 '''
-
+import numpy as np
 
 class Solution(object):
     @classmethod
@@ -15,14 +15,16 @@ class Solution(object):
         """
         new_list = nums1 + nums2
         new_list.sort()
-        # print(new_list)
-        if len(new_list) == 1:
-            return new_list[0]
-        a, b = divmod(len(new_list), 2)
-        # print(a,b)
-        if not b:
-            return (new_list[a - 1] + new_list[a]) / 2.0
-        return new_list[a]
+        return np.median(new_list)
+        # print(np.median(new_list))
+        # # print(new_list)
+        # if len(new_list) == 1:
+        #     return new_list[0]
+        # a, b = divmod(len(new_list), 2)
+        # # print(a,b)
+        # if not b:
+        #     return (new_list[a - 1] + new_list[a]) / 2.0
+        # return new_list[a]
 
 
 if __name__ == '__main__':
